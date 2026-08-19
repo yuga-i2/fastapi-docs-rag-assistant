@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+.env
+data/*.json
+data/*.pkl
+data/*.db
+!data/.gitkeep
+.pytest_cache/
+.streamlit/

@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/srv/data   # persists ingested chunks, search index, and monitoring.db
+    environment:
+      # Leave unset to run in DEMO mode (no LLM calls, no key needed).
+      # Set one of these to enable real generation:
+      - LLM_PROVIDER=${LLM_PROVIDER:-demo}
+      - LLM_MODEL=${LLM_MODEL:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    restart: unless-stopped
