@@ -81,7 +81,14 @@ launches the app.
 ### Option B — Local Python
 
 ```bash
-python -m venv venv && source venv/bin/activate
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+
 pip install -r requirements.txt
 
 python -m app.ingest                                       # build the knowledge base
@@ -317,8 +324,8 @@ reviewer will want explained:
 ## Reproducing from scratch
 
 ```bash
-git clone <your-fork-url> fastapi-docs-assistant
-cd fastapi-docs-assistant
+git clone https://github.com/yuga-i2/fastapi-docs-rag-assistant.git
+cd fastapi-docs-rag-assistant
 pip install -r requirements.txt
 
 python -m app.ingest
